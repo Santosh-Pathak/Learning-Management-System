@@ -28,6 +28,10 @@ const userSchema = new mongoose.Schema(
         ref: "Course", // Establishes relationship with Course schema
       },
     ],
+    photoUrl :{
+      type: String,
+      default: ""
+    }
   },
   { timestamps: true } // Automatically adds `createdAt` and `updatedAt` fields
 );
