@@ -27,9 +27,14 @@
 // };
 
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
 
 const ACCESS_SECRET = process.env.ACCESS_SECRET;  // Secret key for access token
 const REFRESH_SECRET = process.env.REFRESH_SECRET; // Secret key for refresh token
+
+// console.log("ACCESS_SECRET:", process.env.ACCESS_SECRET);
+// console.log("REFRESH_SECRET:", process.env.REFRESH_SECRET);
 
 export const generateTokens = (user) => {
   if (!ACCESS_SECRET || !REFRESH_SECRET) {

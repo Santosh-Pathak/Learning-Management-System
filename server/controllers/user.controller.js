@@ -131,7 +131,7 @@ export const login = async (req, res) => {
     }
 
     // Generate access & refresh tokens
-    const { accessToken, refreshToken } = generateTokens(existingUser);
+    const { accessToken, refreshToken } = generateToken(existingUser);
 
     // Save refresh token in the database
     existingUser.refreshToken = refreshToken;
