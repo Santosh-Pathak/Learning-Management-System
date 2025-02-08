@@ -53,3 +53,4 @@ export const generateTokens = (user) => {
   return { accessToken, refreshToken };
 };
 
+export default generateTokens;

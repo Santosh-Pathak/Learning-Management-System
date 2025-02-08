@@ -1,7 +1,7 @@
 import express from "express";
-import User from "../models/user.model.js";
+import {User} from "../models/user.model.js";
 import bcrypt from "bcrypt";
-import { generateToken } from "../utils/generateToken.js";
+import  generateToken  from "../utils/generateToken.js";
 // User Registration Controller
 export const register = async (req, res) => {
   try {
