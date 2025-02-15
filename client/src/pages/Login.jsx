@@ -1,5 +1,5 @@
 // McgPr7oX7v1mMcbN
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,18 +7,14 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  useLoginUserMutation,
-  useRegisterUserMutation,
-} from "@/features/api/authApi";
-import { Loader2 } from "lucide-react";
+} from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "sonner";
+
 
 const Login = () => {
   const [signupInput, setSignupInput] = useState({
@@ -207,3 +203,4 @@ const Login = () => {
   );
 };
 export default Login;
+

@@ -1,6 +1,5 @@
 import * as React from "react"
-
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"; // Adjust based on your folder structure
 
 const Card = React.forwardRef(({ className, ...props }, ref) => (
   <div
