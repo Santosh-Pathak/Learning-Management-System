@@ -219,7 +219,7 @@ export const getUserProfile = async (req, res) => {
         .json({ success: false, message: "User ID is required" });
     }
 
-    const user = await User.findOne({ _id: userId });
+    const user = await User.findById(userId).select("-password");
 
     if (!user) {
       return res
@@ -230,6 +230,7 @@ export const getUserProfile = async (req, res) => {
     return res
       .status(200)
       .json({ success: true, message: "User Found!", user });
+      
   } catch (error) {
     console.error(error);
     return res
@@ -237,3 +238,5 @@ export const getUserProfile = async (req, res) => {
       .json({ success: false, message: "Failed to Load User" });
   }
 };
+
+
