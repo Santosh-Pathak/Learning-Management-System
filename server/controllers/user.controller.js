@@ -230,13 +230,31 @@ export const getUserProfile = async (req, res) => {
     return res
       .status(200)
       .json({ success: true, message: "User Found!", user });
-      
   } catch (error) {
     console.error(error);
     return res
       .status(500)
-      .json({ success: false, message: "Failed to Load User" });
+      .json({ success: false, message: "Failed to Load User !"});
   }
 };
 
-
+export const updateProfile = async (req, res) => {
+  try {
+    const userId = req?.id;
+    const {name} = req.body;
+    const profilePhoto = req.file;
+    const user = await User.findById(userId);
+    if(!user)
+    {
+      res.status(500)
+      .json({ success: false, message: "User Not Found !"});
+    }
+    const updatedData = {name , phototUrl};
+    
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(500)
+      .json({ success: false, message: "Failed to Update Profile" });
+  }
+};
